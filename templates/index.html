@@ -122,7 +122,7 @@
         function buildList(){
             var wrapper = document.getElementById('list-wrapper')
             wrapper.innerHTML = ''
-            var url = 'http://127.0.0.1:8000/api/task-list/'
+            var url = 'https://to-do-lists-api.herokuapp.com/api/task-list/'
 
             fetch(url)
             .then((resp) => resp.json())
@@ -184,12 +184,12 @@
             
             
             if (activeItem != null){
-                var url = `http://127.0.0.1:8000/api/task-update/${activeItem.id}/`
+                var url = `https://to-do-lists-api.herokuapp.com/api/task-update/${activeItem.id}/`
                 
                 activeItem = null     
             }
             else{
-                var url = 'http://127.0.0.1:8000/api/task-create/'
+                var url = 'https://to-do-lists-api.herokuapp.com/api/task-create/'
             }
            
             var title =  document.getElementById("title").value
@@ -216,7 +216,7 @@
         function editItem(item){
             console.log('Item clicked', item.id)
             activeItem = item
-            url = `http://127.0.0.1:8000/api/task-update/${item.id}/`
+            url = `https://to-do-lists-api.herokuapp.com/api/task-update/${item.id}/`
             console.log(item.status)
 
             let Type = document.getElementById('Type').value = item.type
@@ -228,7 +228,7 @@
 
         function deleteItem(item){
             console.log('Delete')
-            url = `http://127.0.0.1:8000/api/task-delete/${item.id}/`
+            url = `https://to-do-lists-api.herokuapp.com/api/task-delete/${item.id}/`
             fetch(url, {
                 method:'DELETE',
                 headers:{
