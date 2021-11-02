@@ -20,10 +20,4 @@ class Migration(migrations.Migration):
             name='choices',
             field=models.CharField(choices=[('NC', 'Not Completed'), ('C', 'Completed')], default='NC', max_length=2),
         ),
-        migrations.AddField(
-            model_name='task',
-            name='createa',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now),
-            preserve_default=False,
-        ),
     ]

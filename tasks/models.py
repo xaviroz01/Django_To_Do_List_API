@@ -33,10 +33,6 @@ class Task(models.Model):
         choices = TASK_STATUS_CHOICES,
         default = NOT_COMPLETE,)
 
-    createa = models.DateTimeField(auto_now_add=True)
-
-    update = models.DateTimeField(auto_now=True)
-
     class Meta:
         verbose_name_plural = 'TodoLists'
     
