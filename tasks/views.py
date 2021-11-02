@@ -39,7 +39,6 @@ def TaskDetail(request, pk):
 def TaskCreate(request):
     serializer = TaskSerializer(data = request.data)
 
-
     if serializer.is_valid():
         serializer.save()
 

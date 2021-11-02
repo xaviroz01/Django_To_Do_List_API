@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.fields import TextField
 from django.db.models.enums import Choices
 
 #status
@@ -21,12 +20,13 @@ TYPE_CHOICES = [
 
 class Task(models.Model):
 
+
     type = models.CharField(
         max_length=5, 
         choices = TYPE_CHOICES,
         default = TASK_TYPE,)
 
-    task_description = models.TextField(blank=True, null=True)
+    task_description = models.TextField()
 
     status = models.CharField(
         max_length=20, 
