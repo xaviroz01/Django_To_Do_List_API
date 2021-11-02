@@ -30,8 +30,8 @@ def TaskViewSet(request):
 
 
 @api_view(["GET"])
-def TaskDetail(request, id):
-    queryset = Task.objects.get(id = id)
+def TaskDetail(request, pk):
+    queryset = Task.objects.get(id = pk)
     serializer = TaskSerializer(queryset, many = False)
     return Response(serializer.data)
 
@@ -48,8 +48,8 @@ def TaskCreate(request):
 
 
 @api_view(["POST"])
-def TaskUpdate(request, id):
-    queryset = Task.objects.get(id = id)
+def TaskUpdate(request, pk):
+    queryset = Task.objects.get(id = pk)
     serializer = TaskSerializer(instance=queryset, data = request.data)
 
     if serializer.is_valid():
