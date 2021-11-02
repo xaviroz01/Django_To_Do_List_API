@@ -19,7 +19,12 @@ TYPE_CHOICES = [
 
 
 class Task(models.Model):
-
+    id = models.BigAutoField(
+        auto_created=True, 
+        default=1, 
+        primary_key=True, 
+        serialize=False, 
+        verbose_name='ID')
 
     type = models.CharField(
         max_length=5, 
