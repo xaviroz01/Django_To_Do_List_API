@@ -22,7 +22,8 @@ class Task(models.Model):
     id = models.AutoField(
         auto_created=True, 
         primary_key=True, 
-        serialize=False, 
+        serialize=False,
+        null=True, 
         verbose_name='ID')
 
     type = models.CharField(
