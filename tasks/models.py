@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models.enums import Choices
-
+import uuid
 #status
 NOT_COMPLETE = 'NotCompleted'
 COMPLETE = 'Completed'
@@ -19,10 +19,10 @@ TYPE_CHOICES = [
 
 
 class Task(models.Model):
-    id = models.AutoField(
-        auto_created=True, 
-        primary_key=True, 
-        serialize=False, 
+    id = models.UUIDField(
+        primary_key=True,  
+        default=uuid.uuid4, 
+        editable=False, 
         verbose_name='ID')
 
     type = models.CharField(
